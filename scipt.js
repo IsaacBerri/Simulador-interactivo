@@ -1,31 +1,31 @@
-alert("Sistema de calificacion para alumnos")
+alert("Sistema de calificacion para alumnos (5 Notas)")
 
-let nombreIngresado = prompt("Cual es tu nombre??")
-pedirNumeros()
+let nombre = prompt("Cual es tu nombre?")
+let cantidadDeNotas = 5
+let notas = []
 
-
-let resultadoNota = ((nota1 + nota2 + nota3 + nota4 + nota5) / 5)
-
-function pedirNumeros() {
-    nota1 = Number(prompt("Ingrese la nota numero 1"))
-    nota2 = Number(prompt("Ingrese la nota numero 2"))
-    nota3 = Number(prompt("Ingrese la nota numero 3"))
-    nota4 = Number(prompt("Ingrese la nota numero 4"))
-    nota5 = Number(prompt("Ingrese la nota numero 5"))
+for (let i = 0; i < cantidadDeNotas; i++) {
+    notas[i] = Number(prompt("Ingrese la nota " + (i + 1)));
+    notas.push
 }
-function notaFinal(nombre,nota) {
+
+function calculo() {
     
-    if(nota >= 3) {
-        return "El estudiante " + nombre + " aprovo con: " + nota
+    let resultado = ((notas[0] + notas[1] + notas[2] + notas[3] + notas[4]) / cantidadDeNotas)
+    resultado = resultado.toFixed(2)
+    return resultado
+}
+
+function mensaje() {
+    if(calculo() >= 3){
+        return "El estudiante " + nombre + " aprovó con: " + calculo()
     }
     else {
-        return "el estudiante " + nombre + " desprovó con: " + nota
+        return "El estudiante " + nombre + " desaprovó con: " + calculo()
     }
 }
 
-
-
-alert(notaFinal(nombreIngresado,resultadoNota))
+alert(mensaje())
 
 
 
